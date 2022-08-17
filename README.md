@@ -1,24 +1,15 @@
-# api-quick-start
+# LAB - Class 34
+## Project: cookie_stands
+### Author: Omar Al Ghonimat
 
-Template Project for starting up CRUD API with Django Rest Framework
+### Links and Resources
 
-## Customization Steps
+### Setup
 
-- DO NOT migrate yet
-- add additional dependencies as needed
-  - Re-export requirements.txt as needed
-- change `things` folder to the app name of your choice
-- Search through entire code base for `Thing`,`Things` and `things` to modify code to use your resource
-  - `project/settings.py`
-  - `project/urls.py`
-  - App's files
-    - `views.py`
-    - `urls.py`
-    - `admin.py`
-    - `serializers.py`
-    - `permissions.py`
-- Update ThingModel with fields you need
-  - Make sure to update other modules that would be affected by Model customizations. E.g. serializers, tests, etc.
-- Rename `project/.env.sample` to `.env` and update as needed
-- Run makemigrations and migrate commands
-- Optional: Update `api_tester.py`
+#### How to initialize/run your application (where applicable)
+
+#### How to use your library (where applicable)
+
+#### Tests
+To run tests:
+```python .\manage.py test```

@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(
     DEBUG=(bool, False),
-    ENVIRONMENT=(str, "PRODUCTION"),
+    ENVIRONMENT=(str, "DEVELOPMENT"),
     ALLOW_ALL_ORIGINS=(bool, False),
     ALLOWED_HOSTS=(list, []),
     ALLOWED_ORIGINS=(list, []),
@@ -98,18 +98,25 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": env.str("DATABASE_ENGINE"),
-        "NAME": env.str("DATABASE_NAME"),
-        "USER": env.str("DATABASE_USER"),
-        "PASSWORD": env.str("DATABASE_PASSWORD"),
-        "HOST": env.str("DATABASE_HOST"),
-        "PORT": env.int("DATABASE_PORT"),
+print(ENVIRONMENT)
+if ENVIRONMENT == 'PRODUCTION':
+    DATABASES = {
+        "default": {
+            "ENGINE": env.str("DATABASE_ENGINE"),
+            "NAME": env.str("DATABASE_NAME"),
+            "USER": env.str("DATABASE_USER"),
+            "PASSWORD": env.str("DATABASE_PASSWORD"),
+            "HOST": env.str("DATABASE_HOST"),
+            "PORT": env.int("DATABASE_PORT"),
+        }
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
