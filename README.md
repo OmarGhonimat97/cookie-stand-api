@@ -3,12 +3,8 @@
 ### Author: Omar Al Ghonimat
 
 ### Links and Resources
-
-### Setup
-
-#### How to initialize/run your application (where applicable)
-
-#### How to use your library (where applicable)
+Heroku deployed link:
+[cookie-stand-app](https://cookie-stand-app.herokuapp.com/api/v1/cookie_stands/)
 
 #### Tests
 To run tests:
